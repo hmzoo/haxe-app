@@ -20,6 +20,6 @@ haxelib install heaps
 ## HTTP SERVER
 sudo apt-get install busybox
 ## Serve :
-# sudo busybox httpd -f  -p 8000 -h ./build/html
+# sudo busybox httpd -f  -p 8000 -h ./builds/html
 
 # https://manpages.ubuntu.com/manpages/xenial/man1/busybox.1.html

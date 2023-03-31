@@ -1,17 +1,21 @@
 package;
 import haap.*;
+import js.Browser;
 
+var window:haxe.DynamicAccess<Dynamic> = untyped js.Browser.window;
 
 class  MainApp  extends hxd.App {
 
     var infos:h2d.Text;
     var button:haap.Button;
     public var medias:haap.Medias;
+    
 
     override  function  init() {
 
         hxd.Res.initEmbed();
-        medias= new Medias();
+        
+        
 
         infos = new h2d.Text(hxd.res.DefaultFont.get());
         infos.text = "Hello";
@@ -19,7 +23,7 @@ class  MainApp  extends hxd.App {
         button = new haap.Button("BTN",50,20);
         button.x=100;
         button.y=100;
-        button.action = function(){medias.startmedia();};
+        button.action = function(){ok();};
 
         s2d.scaleMode = Resize;
         s2d.addChild(infos); 
@@ -28,7 +32,7 @@ class  MainApp  extends hxd.App {
     }
 
     function ok(){
-        trace("ok");
+        trace("oketo",window.get('shared'));
     }
 
     override function update(dt:Float) {

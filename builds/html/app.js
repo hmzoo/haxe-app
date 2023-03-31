@@ -314,7 +314,6 @@ MainApp.prototype = $extend(hxd_App.prototype,{
 	init: function() {
 		var _gthis = this;
 		hxd_Res.set_loader(new hxd_res_Loader(new hxd_fs_EmbedFileSystem(haxe_Unserializer.run("og"))));
-		this.medias = new haap_Medias();
 		this.infos = new h2d_Text(hxd_res_DefaultFont.get());
 		this.infos.set_text("Hello");
 		this.button = new haap_Button("BTN",50,20);
@@ -325,14 +324,14 @@ MainApp.prototype = $extend(hxd_App.prototype,{
 		_this.posChanged = true;
 		_this.y = 100;
 		this.button.action = function() {
-			_gthis.medias.startmedia();
+			_gthis.ok();
 		};
 		this.s2d.set_scaleMode(h2d_ScaleMode.Resize);
 		this.s2d.addChild(this.infos);
 		this.s2d.addChild(this.button);
 	}
 	,ok: function() {
-		haxe_Log.trace("ok",{ fileName : "src/MainApp.hx", lineNumber : 31, className : "MainApp", methodName : "ok"});
+		haxe_Log.trace("oketo",{ fileName : "src/MainApp.hx", lineNumber : 35, className : "MainApp", methodName : "ok", customParams : [MainApp_window["shared"]]});
 	}
 	,update: function(dt) {
 		var w = hxd_Window.getInstance().get_width();
@@ -77681,6 +77680,7 @@ js_Boot.__toStr = ({ }).toString;
 if(ArrayBuffer.prototype.slice == null) {
 	ArrayBuffer.prototype.slice = js_lib__$ArrayBuffer_ArrayBufferCompat.sliceImpl;
 }
+var MainApp_window = window;
 Xml.Element = 0;
 Xml.PCData = 1;
 Xml.CData = 2;
